@@ -1,0 +1,19 @@
+a=[]#arival time
+b=[]#brust time
+w=[]#waiting time
+n=int(input("How Many Process You Want to Execute:-"))#input process
+for i in range(n):
+    print("******Process",i+1,"******")
+    a.append(int(input("\tEnter Arival Time of Process:-")))# input Arrival time
+    b.append(int(input("\tEnter Brust Time of Process:-")))#input Brust time
+    p=[a[i],b[i],i]
+#yha se confusion hai condition nhi smjh aarhi hai 
+p.pop(-1)
+print(a)
+print("\t",b)
+i=0
+l=[]
+for i in range(sum(a)):
+	l = [j  for j in b  if j[1] <= i]
+	l.sort(key=lambda x: x[0])
+	print(l, l[0][2])
